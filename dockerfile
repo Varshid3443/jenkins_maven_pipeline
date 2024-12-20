@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the JAR file from the Maven build
-COPY target/my-app-1.0-SNAPSHOT.jar /app/my-app.jar
+COPY target/jenkins-maven-pipeline-1.0-SNAPSHOT.jar /app/my-app.jar
 
 # Expose port 8080
 EXPOSE 8080
