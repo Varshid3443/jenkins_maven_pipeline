@@ -3,42 +3,30 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <!-- Parent definition -->
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Group ID (usually your organization's domain, e.g., com.example) -->
-    <groupId>com.varshid</groupId>
-
-    <!-- Artifact ID (name of the project, usually matching the directory name) -->
+    <groupId>com.example</groupId> <!-- Use your actual groupId here -->
     <artifactId>jenkins-maven-pipeline</artifactId>
-
-    <!-- Version of the project -->
     <version>1.0-SNAPSHOT</version>
-
-    <!-- Packaging type (e.g., JAR, WAR, etc.) -->
     <packaging>jar</packaging>
 
-    <!-- Name of the project (optional) -->
     <name>Jenkins Maven Pipeline</name>
-
-    <!-- URL to the project website or Git repository -->
     <url>https://github.com/Varshid3443/jenkins_maven_pipeline</url>
 
-    <!-- Build information -->
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin: ensures correct JDK for compiling -->
+            <!-- Maven Compiler Plugin for Java 8 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source> <!-- Java version to use for compilation -->
-                    <target>1.8</target> <!-- Java version for compiled classes -->
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
-            <!-- Maven Jar Plugin: includes Main-Class in the manifest -->
+            <!-- Maven Jar Plugin to add the Main-Class to the JAR manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -46,35 +34,34 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>com.varshid.Main</Main-Class> <!-- Update with your main class -->
+                            <!-- Correct main class based on your project structure -->
+                            <Main-Class>com.example.Main</Main-Class> <!-- Update with your main class -->
                         </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
 
-            <!-- Maven Surefire Plugin: runs unit tests during the build process -->
+            <!-- Maven Surefire Plugin to run tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <skipTests>false</skipTests> <!-- If true, tests are skipped -->
+                    <skipTests>false</skipTests>
                 </configuration>
             </plugin>
         </plugins>
     </build>
 
-    <!-- Dependencies -->
     <dependencies>
         <!-- JUnit dependency for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version> <!-- Match the version to your testing framework -->
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- Add other dependencies below -->
+        <!-- Add other dependencies here if necessary -->
     </dependencies>
-
 </project>
