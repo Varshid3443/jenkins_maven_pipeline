@@ -2,28 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <!-- Parent definition -->
     <modelVersion>4.0.0</modelVersion>
 
     <!-- Group ID (usually your organization's domain, e.g., com.example) -->
     <groupId>com.varshid</groupId>
-    
+
     <!-- Artifact ID (name of the project, usually matching the directory name) -->
     <artifactId>jenkins-maven-pipeline</artifactId>
-    
+
     <!-- Version of the project -->
     <version>1.0-SNAPSHOT</version>
-    
+
     <!-- Packaging type (e.g., JAR, WAR, etc.) -->
     <packaging>jar</packaging>
-    
+
     <!-- Name of the project (optional) -->
     <name>Jenkins Maven Pipeline</name>
 
     <!-- URL to the project website or Git repository -->
     <url>https://github.com/Varshid3443/jenkins_maven_pipeline</url>
-    
+
     <!-- Build information -->
     <build>
         <plugins>
@@ -35,6 +35,20 @@
                 <configuration>
                     <source>1.8</source> <!-- Java version to use for compilation -->
                     <target>1.8</target> <!-- Java version for compiled classes -->
+                </configuration>
+            </plugin>
+
+            <!-- Maven Jar Plugin: includes Main-Class in the manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>com.varshid.Main</Main-Class> <!-- Update with your main class -->
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
 
@@ -52,15 +66,12 @@
 
     <!-- Dependencies -->
     <dependencies>
-        <!-- JUnit dependency for testing (you can add others as required) -->
+        <!-- JUnit dependency for testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version> <!-- Make sure you match your testing framework version -->
+            <version>4.12</version> <!-- Match the version to your testing framework -->
             <scope>test</scope>
         </dependency>
-        
-        <!-- Add other dependencies here -->
-    </dependencies>
-    
-</project>
+
+        <!-- Add other de
