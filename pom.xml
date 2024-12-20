@@ -74,4 +74,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Add other de
+        <!-- Add other dependencies below -->
+    </dependencies>
+
+</project>
