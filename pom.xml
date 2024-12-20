@@ -47,23 +47,20 @@
                     <skipTests>false</skipTests> <!-- If true, tests are skipped -->
                 </configuration>
             </plugin>
-
-            <!-- Maven Jar Plugin: specifies the main class in the JAR manifest -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <archive>
-                        <manifestEntries>
-                            <Main-Class>com.varshid.Main</Main-Class> <!-- Replace with your actual Main class -->
-                        </manifestEntries>
-                    </archive>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
     <!-- Dependencies -->
     <dependencies>
-        <!-- JUn
+        <!-- JUnit dependency for testing (you can add others as required) -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version> <!-- Make sure you match your testing framework version -->
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Add other dependencies here -->
+    </dependencies>
+    
+</project>
