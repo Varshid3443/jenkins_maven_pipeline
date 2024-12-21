@@ -1,14 +1,14 @@
-# Use OpenJDK base image
-FROM openjdk:11-jre-slim
+# Step 1: Use an official OpenJDK image as a base image
+FROM openjdk:8-jdk-alpine
 
-# Set working directory in the container
+# Step 2: Set the working directory in the container
 WORKDIR /app
 
-# Copy the JAR file from the Maven build
-COPY target/jenkins-maven-pipeline-1.0-SNAPSHOT.jar /app/my-app.jar
+# Step 3: Copy the Maven-built .jar file from your local machine to the container
+COPY target/jenkins-maven-pipeline-1.0-SNAPSHOT.jar /app/jenkins-maven-pipeline.jar
 
-# Expose port 8080
+# Step 4: Expose the port the application will run on
 EXPOSE 8080
 
-# Command to run the app
-ENTRYPOINT ["java", "-jar", "/app/my-app.jar"]
+# Step 5: Set the entrypoint for the Docker container
+ENTRYPOINT ["java", "-jar", "jenkins-maven-pipeline.jar"]
