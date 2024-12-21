@@ -27,8 +27,6 @@
             <artifactId>surefire-api</artifactId>
             <version>3.2.1</version>
         </dependency>
-
-        <!-- Additional dependencies you may need can be added here -->
     </dependencies>
 
     <build>
@@ -39,16 +37,17 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <!-- Define final name of the jar if necessary -->
+                    <!-- This is optional, but setting a final name can help avoid issues -->
                     <finalName>jenkins-maven-pipeline</finalName>
-                    <!-- If you want to attach additional artifacts, consider using classifiers -->
-                    <classifier></classifier>
+                    <!-- Manifest configuration (optional but good practice for executable JARs) -->
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.example.App</mainClass> <!-- Replace with your main class -->
+                            <mainClass>com.example.App</mainClass> <!-- Change to your actual main class -->
                         </manifest>
                     </archive>
+                    <!-- Set up classifier if dealing with supplemental artifacts -->
+                    <!-- <classifier>extra</classifier> -->
                 </configuration>
             </plugin>
 
@@ -78,4 +77,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
