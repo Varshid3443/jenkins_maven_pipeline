@@ -5,7 +5,7 @@ FROM openjdk:8-jdk-alpine
 WORKDIR /app
 
 # Step 3: Copy the Maven-built .jar file from your local machine to the container
-COPY target/jenkins-maven-pipeline-1.0-SNAPSHOT.jar /app/jenkins-maven-pipeline.jar
+COPY target/jenkins-maven-pipeline.jar /app/jenkins-maven-pipeline.jar
 
 # Step 4: Expose the port the application will run on
 EXPOSE 8080
